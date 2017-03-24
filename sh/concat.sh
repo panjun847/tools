@@ -89,7 +89,7 @@ function getGreenText(){
 }
 function minify(){
   if [ -f $1 ];then
-      cat $1 | java -jar jar/compiler.jar  2>/dev/null  > $1.tmpfile;
+      cat $1 | java -jar jar/compiler.jar  > $1.tmpfile 2>/dev/null; 
       mv $1.tmpfile $1;
       printf "\n `getGreenText "minify $1" `\n=====================================\n"
   fi

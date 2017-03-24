@@ -19,7 +19,7 @@ function forEach(){
     local suffix=`get_suffix $i`;
     local distName=`get_dist_dir $i`;
     if [ "$suffix" = "jpg" ] || [ "$suffix" = "jpeg" ];then
-      convert -quality 80% $i $distName;
+      convert -quality 90% -interlace JPEG  $i $distName;
       printf "`getGreenText "   convert $i -> $distName"`";
     else
       cp $i $distName;

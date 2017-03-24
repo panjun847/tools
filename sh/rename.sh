@@ -72,7 +72,7 @@ function rename(){
   local targetFile="$1"
   local pageLink="$2";
   local sedTarget="$3";
-  local targetVer=`md5sum $targetFile | awk '{$a=substr($0,0,6);print $a}'`;
+  local targetVer=`md5sum $targetFile | awk '{print substr($0,0,12)}'`;
   #目标文件的名字和后缀名
   local targetBase=${targetFile%.*};
   local targetSuffix=${targetFile##*.};
