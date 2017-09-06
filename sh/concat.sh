@@ -94,6 +94,12 @@ function minify(){
       printf "\n `getGreenText "minify $1" `\n=====================================\n"
   fi
 }
+function indexOf(){
+  local str1=$1;
+  local str2=$2;
+  local index=`echo $str1 | sed -n "s/${str2}.*//p" | wc -c`
+  echo $index;
+}
 function is_end(){
   if [ $1"##" = "$endStr##" ];then
     return 1
